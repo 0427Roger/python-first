@@ -7,14 +7,18 @@ def play_game():
     target=random.randint(1,100)
     while True:
       try:
-        keyin=int(input(f'input namber(min~max):'))
+        keyin:int=int(input(f'input namber(min~max):'))
         if keyin<=min or keyin>=max:
-          print('input error.')
-          
+          print('input range error.')
+          continue
       except:
+        print('input format error.')
         continue
       if keyin<=target:
+        print('Bigger')
         min=keyin
       elif keyin>=target:
-        max
-    
+        print('smallier')
+        max=keyin
+      else keyin==target:
+        print('Win')
