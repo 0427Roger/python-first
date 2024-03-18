@@ -21,4 +21,4 @@ def play_game():
         print('smallier')
         max=keyin
       else keyin==target:
-        print('Win')
+        print('Guees')
