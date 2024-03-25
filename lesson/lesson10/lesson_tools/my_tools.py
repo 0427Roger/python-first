@@ -44,3 +44,5 @@ class Items(RootModel):
 
     def __getitem__(self, item):
         return self.root[item]
+import sys
+print(sys.path)
