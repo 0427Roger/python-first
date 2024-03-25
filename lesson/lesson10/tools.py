@@ -1,3 +1,4 @@
+#tools.py
 from pydantic import BaseModel,RootModel
 import random
 def create_profile()->list[dict]:
@@ -14,12 +15,12 @@ class Item(BaseModel):
     height:float
     weight:float
     def show(self):
-        print(f'Name:{self.name},BMI={self.bmi :.2f},{self.judge}')
+        print(f'Name:{self.name},BMI={self.bmi :.2f},{self.judgment}')
     @property
     def bmi(self)->float:
         return self.weight/(self.height/100)**2
     @property
-    def judge(self)->str:
+    def judgment(self)->str:
         if self.bmi<18.5:
             return 'underweight'
         elif self.bmi<24:
