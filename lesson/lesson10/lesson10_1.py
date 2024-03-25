@@ -1,4 +1,4 @@
-from tools import create_profile
+from lesson_tools.tools import create_profile
 def main():
     items=Items.model_validate(create_profile())
     items.showAll()
