@@ -1,4 +1,6 @@
-from lesson_tools.my_tools import getItems,Items
+from lesson_tools.my_tools import create_profile,Items
 def main():
-    items:Items = getItems()
+    items:Items = Items.model_validate(create_profile())
     items.showAll()
+if __name__=='__main__':
+    main()
