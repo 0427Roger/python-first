@@ -14,21 +14,3 @@ def get_scores(names:list[str])->list[dict]:
         item['physics']=random.randint(50,100)
         items.append(item)
     return items
-def inputInt(prompt:str,min:int=0,max:int=999)->int:
-    while True:
-        print(prompt)
-        try:
-            while True:
-                value:int=eval(input(f'input value(range{min}~{max}):'))
-                if value<=max and value>=min:
-                    print(value)
-                    return value
-                elif value<min:
-                    print('input range is too small.')
-                    continue
-                elif value>max:
-                    print('input range is too large.')
-                    continue
-        except:
-            print('input format error.')
-            continue
