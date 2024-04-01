@@ -8,7 +8,7 @@ def main():
     scores:list[dict]=get_scores(names)
     with(open('class.csv',mode='w',encoding='utf-8',newline=''))as(file):
         dictwriter=csv.DictWriter(file,fieldnames=['name','nature','history','physics'])
-        dictwriter.writeheader()
-        dictwriter.writerows(scores)
+        dictwriter.writeheader() #write title
+        dictwriter.writerows(scores) #write data
 if __name__=='__main__':
     main()
