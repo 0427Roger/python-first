@@ -36,7 +36,10 @@ def main():
     response:Response=get_Taipei_youbike()
     if response:
         rawString:str=response.text
-    data:list[dict]=Sites.model_validate_json(rawString)
-    return display(pd.DataFrame(data))
+    data:list=Sites.model_validate_json(rawString)
+    download:list[dict]=data.model_dump()
+    table=pd.DataFrame(download)
+    return table
+
 if __name__=='__main__':
     main()
