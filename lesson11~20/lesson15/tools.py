@@ -1,3 +1,10 @@
+import random
+import pandas as pd
+import csv
+from io import StringIO
+import requests
+from requests import Response
+
 def get_names(num:int=5)->list[str]:
     with open('names.txt',encoding='utf-8') as file:
         context=file.read().split('\n')
@@ -14,7 +21,7 @@ def get_physical(names)->list[dict[str,int,int]]:
         items.append(item)
     return items
 
-def download(url)->response|None:
+def download(url)->Response|None:
     response:Response=requests.get(url)
     try:
         response.raise_for_status()
