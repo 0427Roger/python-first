@@ -10,3 +10,4 @@ yfinance
 ffn
 Flask
 gunicorn
+sympy
